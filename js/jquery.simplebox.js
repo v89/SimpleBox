@@ -26,8 +26,11 @@
              * Cannot find a feature that will allow for detection of IE7 except $.support.boxModel
              * but, then the browser needs to be in QuirksMode.
              */
-            if(jQuery.browser.version === "7.0") {
-                $("html").addClass("ie7");
+            var browser = $.browser;
+            if(typeof browser != 'undefined') {
+                if(browser.version === "7.0") {
+                    $("html").addClass("ie7");
+                }
             }
 
             $(wrapper).attr({
